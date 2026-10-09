@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Deux mouvements différents… une même cause ?</title>
+<style>
+:root{--bg:#f2f8fc;--ink:#12324a;--blue:#1b6fa8;--blue2:#1d6fd8;--green:#2e8b57;--red:#d62839;--card:#fff;--line:#cfe3f1}
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:linear-gradient(#eaf5fc,#f4fbf6);color:var(--ink);line-height:1.5}
+.wrap{max-width:1100px;margin:0 auto;padding:16px}
+h1{font-size:clamp(1.3rem,3.5vw,1.9rem);margin:.2em 0;color:var(--blue)}
+h2{font-size:1.1rem;margin:0 0 .4em}
+.sub{margin:0 0 12px;color:#42647c}
+.steps{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 14px;padding:0;list-style:none}
+.steps li{padding:6px 14px;border-radius:99px;background:#e0edf6;color:#3d5f78;font-weight:600;font-size:.9rem;transition:.4s}
+.steps li.on{background:var(--blue);color:#fff}
+.scenes{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:12px;box-shadow:0 2px 10px rgba(27,111,168,.08)}
+.card h2{color:var(--ink)}
+svg{width:100%;height:auto;display:block;border-radius:12px}
+.legend{min-height:26px;display:flex;flex-wrap:wrap;gap:6px 14px;font-size:.88rem;margin-top:6px}
+.legend span{opacity:0;transition:opacity .6s}
+.legend span.on{opacity:1}
+.lb{color:#0f55b0;font-weight:600}.lr{color:var(--red);font-weight:700}
+.bar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:14px 0}
+button{font:inherit;font-weight:600;min-height:44px;padding:8px 18px;border-radius:12px;border:2px solid var(--blue);background:#fff;color:var(--blue);cursor:pointer;transition:.25s}
+button.p{background:var(--blue);color:#fff}
+button:hover:not(:disabled){transform:translateY(-1px);box-shadow:0 3px 8px rgba(27,111,168,.25)}
+button:disabled{opacity:.5;cursor:not-allowed}
+:focus-visible{outline:3px solid #ff9f1c;outline-offset:2px}
+.sw{display:flex;align-items:center;gap:8px;min-height:44px;padding:4px 12px;border:1px solid var(--line);border-radius:12px;background:#fff;cursor:pointer}
+.sw input{width:22px;height:22px;accent-color:var(--blue)}
+.sw.dis{opacity:.55;cursor:not-allowed}
+.moment{margin-top:14px;animation:in .5s}
+.moment[hidden]{display:none}
+@keyframes in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.m1{border-left:6px solid var(--blue)}.m2{border-left:6px solid #e0a100}.m3{border-left:6px solid var(--green)}
+fieldset{border:0;padding:0;margin:0 0 8px}
+.opt{display:flex;align-items:center;gap:10px;min-height:44px;padding:4px 12px;margin:6px 0;border:1px solid var(--line);border-radius:10px;cursor:pointer;background:#f8fcff}
+.opt input{width:20px;height:20px;accent-color:var(--blue)}
+textarea,input[type=text]{width:100%;font:inherit;padding:8px 10px;border:1px solid #9bbbd0;border-radius:10px;margin:4px 0 8px}
+label.q{font-weight:600;display:block}
+.note{font-size:.9rem;color:#42647c;margin:6px 0 0}
+.concl{background:#eaf7ef;border:2px solid var(--green);border-radius:14px;padding:14px;margin-top:12px}
+.concl .pre{background:#fff;border-radius:10px;padding:10px;margin-top:8px}
+.ov{opacity:0;transition:opacity .9s}.ov.on{opacity:1}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<main class="wrap">
+<h1>Deux mouvements différents… une même cause ?</h1>
+<p class="sub">Tronc Commun Scientifique — Physique</p>
+<ol class="steps" aria-label="Étapes">
+<li id="st1" class="on" aria-current="step">① Observer</li><li id="st2">② Hypothèse</li><li id="st3">③ Vérifier</li>
+</ol>
+
+<div class="scenes">
+<section class="card" aria-labelledby="t1">
+<h2 id="t1">Scène 1 : la pomme</h2>
+<svg viewBox="0 0 400 380" role="img" aria-label="Un pommier avec une pomme suspendue au-dessus du sol">
+<defs>
+<linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#cfe9fb"/><stop offset="1" stop-color="#f3fbff"/></linearGradient>
+<linearGradient id="gr" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5bbf7a"/><stop offset="1" stop-color="#2e8b57"/></linearGradient>
+<marker id="mB" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#1d6fd8"/></marker>
+<marker id="mL" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#6cb8ff"/></marker>
+<marker id="mR" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0L10 5L0 10z" fill="#d62839"/></marker>
+<radialGradient id="ea" cx=".35" cy=".35" r=".8"><stop offset="0" stop-color="#6fc3ff"/><stop offset="1" stop-color="#1b5fa8"/></radialGradient>
+</defs>
+<rect width="400" height="380" fill="url(#sky)"/>
+<ellipse cx="320" cy="55" rx="40" ry="14" fill="#fff" opacity=".9"/><ellipse cx="345" cy="45" rx="26" ry="12" fill="#fff" opacity=".9"/>
+<rect y="310" width="400" height="70" fill="url(#gr)"/>
+<text x="340" y="350" text-anchor="middle" fill="#fff" font-size="18" font-weight="700">Terre</text>
+<path d="M98 312L108 190H130L138 312Z" fill="#8b5a2b"/>
+<g fill="#38a864"><circle cx="78" cy="140" r="52"/><circle cx="130" cy="98" r="58"/><circle cx="180" cy="150" r="46"/><circle cx="105" cy="170" r="44"/></g>
+<path d="M120 205Q190 125 252 100" stroke="#8b5a2b" stroke-width="9" fill="none" stroke-linecap="round"/>
+<g id="motion1" class="ov"><line x1="300" y1="122" x2="300" y2="290" stroke="#1d6fd8" stroke-width="3" stroke-dasharray="7 6" marker-end="url(#mB)"/></g>
+<g id="apple"><path d="M250 109L252 99" stroke="#6b4423" stroke-width="3" stroke-linecap="round"/><circle cx="250" cy="123" r="15" fill="#e03c3c"/><ellipse cx="245" cy="117" rx="4" ry="6" fill="#fff" opacity=".4"/><path d="M252 101Q262 94 268 100Q260 106 252 101Z" fill="#2e8b57"/></g>
+<g id="force1" class="ov"><line id="f1" x1="250" y1="140" x2="250" y2="190" stroke="#d62839" stroke-width="5" marker-end="url(#mR)"/></g>
+</svg>
+<div class="legend"><span class="lb m-leg">⇢ Mouvement (trajet)</span><span class="lr a-leg">→ Action exercée par la Terre</span></div>
+</section>
+
+<section class="card" aria-labelledby="t2">
+<h2 id="t2">Scène 2 : la Lune</h2>
+<svg viewBox="0 0 400 380" role="img" aria-label="La Lune tourne autour de la Terre">
+<rect width="400" height="380" fill="#0d2240"/>
+<g id="stars" fill="#fff"></g>
+<g id="motion2" class="ov"><circle cx="200" cy="190" r="130" fill="none" stroke="#6cb8ff" stroke-width="2.5" stroke-dasharray="7 7"/><g id="chev" stroke="#6cb8ff" stroke-width="3" fill="none"></g><line id="vel" stroke="#6cb8ff" stroke-width="4" marker-end="url(#mL)"/></g>
+<circle cx="200" cy="190" r="36" fill="url(#ea)"/>
+<path d="M182 178q10-10 22-4q6 8-4 14q-10 4-18-10zM208 200q10-4 14 6q-2 10-12 8q-6-8-2-14z" fill="#4caf6a"/>
+<text x="200" y="246" text-anchor="middle" fill="#fff" font-size="15" font-weight="700">Terre</text>
+<g id="force2" class="ov"><line id="f2" stroke="#ff5a67" stroke-width="5" marker-end="url(#mR)"/></g>
+<g id="moon"><circle r="12" fill="#e4e4e4"/><circle cx="-4" cy="-3" r="3" fill="#bdbdbd"/><circle cx="4" cy="4" r="2.5" fill="#bdbdbd"/></g>
+<text id="moonLbl" fill="#fff" font-size="14" font-weight="700" text-anchor="middle">Lune</text>
+</svg>
+<div class="legend"><span class="lb m-leg" style="color:#0f55b0">⇢ Mouvement (trajectoire)</span><span class="lr a-leg">→ Action exercée par la Terre</span></div>
+</section>
+</div>
+
+<div class="bar" role="group" aria-label="Commandes">
+<button class="p" id="go">▶️ Lancer</button>
+<button id="pause">⏸️ Pause</button>
+<button id="reset">🔄 Réinitialiser</button>
+<label class="sw"><input type="checkbox" id="tm"> Afficher les mouvements</label>
+<label class="sw dis" id="taL"><input type="checkbox" id="ta" disabled> Afficher les actions</label>
+</div>
+<p class="note" id="aHint">Le bouton « Afficher les actions » se débloque après ton hypothèse.</p>
+
+<section class="card moment m1" id="m1">
+<h2>① Observer</h2>
+<p>Observe attentivement les deux situations. Que remarques-tu ?</p>
+<button class="p" id="toHyp" disabled>Passer à l'hypothèse →</button>
+<span class="note" id="h1">Lance d'abord la simulation.</span>
+</section>
+
+<section class="card moment m2" id="m2" hidden>
+<h2>② Formuler une hypothèse</h2>
+<fieldset><legend><strong>À ton avis, une même action de la Terre pourrait-elle expliquer ces deux mouvements ?</strong></legend>
+<label class="opt"><input type="radio" name="h" value="A"> A. Oui</label>
+<label class="opt"><input type="radio" name="h" value="B"> B. Non</label>
+<label class="opt"><input type="radio" name="h" value="C"> C. Je ne sais pas encore</label>
+</fieldset>
+<label class="q" for="hyp">Mon hypothèse</label>
+<textarea id="hyp" rows="2" placeholder="Écris ton idée avec tes mots…"></textarea>
+<button class="p" id="okHyp" disabled>Valider mon hypothèse</button>
+<p class="note" id="h2" aria-live="polite"></p>
+</section>
+
+<section class="card moment m3" id="m3" hidden>
+<h2>③ Vérifier</h2>
+<p id="p3">Pour vérifier ton hypothèse, active « Afficher les actions ».</p>
+<div id="qs" hidden>
+<label class="q" for="q1">1. Dans quel sens la Terre semble-t-elle agir sur la pomme ?</label><input type="text" id="q1">
+<label class="q" for="q2">2. Vers quel astre est dirigée la flèche appliquée à la Lune ?</label><input type="text" id="q2">
+<label class="q" for="q3">3. Y a-t-il un contact direct entre la Terre et ces objets ?</label><input type="text" id="q3">
+<label class="q" for="q4">4. Quelle conclusion peux-tu proposer ?</label><input type="text" id="q4">
+<button class="p" id="conc">Découvrir la conclusion</button>
+</div>
+<div class="concl" id="cc" hidden aria-live="polite">
+<p><strong>La Terre exerce une action attractive à distance sur la pomme et sur la Lune.</strong></p>
+<p>Cette action est appelée <strong>attraction gravitationnelle</strong>.</p>
+<p>Plus généralement, deux corps possédant une masse s'attirent mutuellement : c'est la <strong>gravitation universelle</strong>.</p>
+<div class="pre">La Lune ne tombe pas directement sur la Terre parce qu'elle possède aussi une vitesse de déplacement. L'attraction terrestre modifie continuellement la direction de son mouvement.</div>
+</div>
+</section>
+</main>
+
+<script>
+const $=id=>document.getElementById(id),NS='http://www.w3.org/2000/svg';
+const AD=174,AA=180,W=2*Math.PI/9,CX=200,CY=190,R=130,MR=12,TH0=-Math.PI/2;
+let running=false,t=0,th=TH0,last=null,launched=false;
+
+// étoiles discrètes
+for(let i=0;i<45;i++){const c=document.createElementNS(NS,'circle');
+ c.setAttribute('cx',(Math.abs(Math.sin(i*12.9))*400).toFixed(1));
+ c.setAttribute('cy',(Math.abs(Math.sin(i*78.2+1))*380).toFixed(1));
+ c.setAttribute('r',(.6+Math.abs(Math.sin(i*3.3))*.9).toFixed(1));
+ c.setAttribute('opacity',.35+Math.abs(Math.sin(i))*.4);$('stars').appendChild(c);}
+// chevrons de sens de rotation sur l'orbite
+[30,150,270].forEach(d=>{const a=d*Math.PI/180,x=CX+R*Math.cos(a),y=CY+R*Math.sin(a),tx=-Math.sin(a),ty=Math.cos(a);
+ const l=document.createElementNS(NS,'line');
+ l.setAttribute('x1',x-tx*3);l.setAttribute('y1',y-ty*3);l.setAttribute('x2',x+tx*5);l.setAttribute('y2',y+ty*5);
+ l.setAttribute('marker-end','url(#mL)');$('chev').appendChild(l);});
+
+const set=(e,o)=>{for(const k in o)e.setAttribute(k,o[k])};
+function draw(){
+ const dy=Math.min(.5*AA*t*t,AD);
+ $('apple').setAttribute('transform',`translate(0 ${dy})`);
+ set($('f1'),{y1:140+dy,y2:190+dy});
+ const c=Math.cos(th),s=Math.sin(th),mx=CX+R*c,my=CY+R*s;
+ $('moon').setAttribute('transform',`translate(${mx} ${my})`);
+ set($('moonLbl'),{x:mx+c*28,y:my+s*28+5});
+ // action : toujours vers le centre de la Terre
+ set($('f2'),{x1:mx-c*(MR+3),y1:my-s*(MR+3),x2:mx-c*(MR+3+50),y2:my-s*(MR+3+50)});
+ // mouvement : tangent à la trajectoire
+ set($('vel'),{x1:mx-s*(MR+3),y1:my+c*(MR+3),x2:mx-s*(MR+3+38),y2:my+c*(MR+3+38)});
+}
+function tick(ts){
+ if(!running){last=null;return}
+ if(last===null)last=ts;
+ const dt=Math.min((ts-last)/1000,.05);last=ts;
+ if(.5*AA*t*t<AD)t+=dt;
+ th+=W*dt;draw();requestAnimationFrame(tick);
+}
+$('go').onclick=()=>{if(running)return;running=true;launched=true;
+ $('toHyp').disabled=false;$('h1').textContent='';requestAnimationFrame(tick)};
+$('pause').onclick=()=>{running=false};
+$('reset').onclick=()=>{running=false;t=0;th=TH0;last=null;draw()};
+
+const toggle=(id,sel)=>{$(id).onchange=e=>{
+ [...document.querySelectorAll(sel)].forEach(n=>n.classList.toggle('on',e.target.checked));}};
+$('tm').onchange=e=>{['motion1','motion2'].forEach(i=>$(i).classList.toggle('on',e.target.checked));
+ document.querySelectorAll('.m-leg').forEach(n=>n.classList.toggle('on',e.target.checked))};
+$('ta').onchange=e=>{const on=e.target.checked;
+ ['force1','force2'].forEach(i=>$(i).classList.toggle('on',on));
+ document.querySelectorAll('.a-leg').forEach(n=>n.classList.toggle('on',on));
+ if(on){$('qs').hidden=false;$('p3').textContent='Observe bien les flèches rouges, puis réponds aux questions.'}};
+
+function step(n){[1,2,3].forEach(i=>{const e=$('st'+i);e.classList.toggle('on',i===n);
+ i===n?e.setAttribute('aria-current','step'):e.removeAttribute('aria-current')})}
+$('toHyp').onclick=()=>{$('m2').hidden=false;step(2);$('m2').scrollIntoView({behavior:'smooth',block:'nearest'})};
+document.querySelectorAll('input[name=h]').forEach(r=>r.onchange=()=>{$('okHyp').disabled=false});
+$('okHyp').onclick=()=>{
+ $('h2').textContent='Hypothèse enregistrée. Vérifions-la maintenant !';
+ $('ta').disabled=false;$('taL').classList.remove('dis');
+ $('aHint').textContent='Tu peux maintenant activer « Afficher les actions ».';
+ $('m3').hidden=false;step(3);$('m3').scrollIntoView({behavior:'smooth',block:'nearest'})};
+$('conc').onclick=()=>{$('cc').hidden=false;$('cc').scrollIntoView({behavior:'smooth',block:'nearest'})};
+draw();
+</script>
+</body>
+</html>
